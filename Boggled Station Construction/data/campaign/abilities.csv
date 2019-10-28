@@ -1,0 +1,2 @@
+name,id,type,tags,activationDays,activationCooldown,durationDays,deactivationDays,deactivationCooldown,unlockedAtStart,defaultForAIFleet,musicSuppression,uiOn,uiOff,uiLoop,worldOn,worldOff,worldLoop,icon,plugin,ai,desc,sortOrder
+Construct Station,boggled_construct_station,DURATION,"",0,,0,0,1,TRUE,FALSE,,,,,,,,graphics/icons/abilities/construct_station.png,data.campaign.econ.abilities.Construct_Station,,"Construct a mining station in an asteroid belt.",5000
