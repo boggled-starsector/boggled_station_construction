@@ -2,14 +2,14 @@
     # Points toward the online master .version file. This mod works by comparing
     # the local and online version to see if there is a newer version available.
     #
-    "masterVersionFile":"https://github.com/boggled-starsector/boggled_ai/raw/master/Boggled%20AI%20Core%20Production/ai_core_production.version",
+    "masterVersionFile":"https://github.com/boggled-starsector/boggled_station_construction/raw/master/Boggled%20Station%20Construction/boggled_station_construction.version",
     # The name that is displayed in-game for your mod
     "modName":"Station Construction",
     # The ID of the thread where updates to this mod can be found (optional).
     # This is used to launch directly to the forum thread from in the game.
     # The ID is the set of digits at the end of the forum thread URL before the dot.
     # For example: https://fractalsoftworks.com/forum/index.php?topic=8181.0 has a modThreadId of 8181
-    "modThreadId":17084,
+    "modThreadId":17094,
     # The ID of the NexusMods page for this mod (optional)
     # This is used to launch directly to the NexusMods page from in the game.
     # The ID is the number at the end of the mod's NexusMods page's URL
