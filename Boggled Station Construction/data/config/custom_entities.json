@@ -1,6 +1,6 @@
 {
 	"boggled_astropolis_station_alpha":{
-		"defaultName":"ERROR TELL BOGGLED IF SEEN custom_entities.json defaultName", # used if name=null in addCustomEntity()
+		"defaultName":"Astropolis", # used if name=null in addCustomEntity()
 		"defaultRadius":110, # used if radius<0 in addCustomEntity()
 		"customDescriptionId":"astropolis_station",
 		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
@@ -21,7 +21,7 @@
 		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
 	},
 	"boggled_astropolis_station_beta":{
-		"defaultName":"ERROR TELL BOGGLED IF SEEN custom_entities.json defaultName", # used if name=null in addCustomEntity()
+		"defaultName":"Astropolis", # used if name=null in addCustomEntity()
 		"defaultRadius":110, # used if radius<0 in addCustomEntity()
 		"customDescriptionId":"astropolis_station",
 		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
@@ -42,7 +42,7 @@
 		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
 	},
 	"boggled_astropolis_station_gamma":{
-		"defaultName":"ERROR TELL BOGGLED IF SEEN custom_entities.json defaultName", # used if name=null in addCustomEntity()
+		"defaultName":"Astropolis", # used if name=null in addCustomEntity()
 		"defaultRadius":110, # used if radius<0 in addCustomEntity()
 		"customDescriptionId":"astropolis_station",
 		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
@@ -63,7 +63,7 @@
 		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
 	},
 	"boggled_station_mining":{
-		"defaultName":"ERROR TELL BOGGLED IF SEEN custom_entities.json defaultName", # used if name=null in addCustomEntity()
+		"defaultName":"Mining Station", # used if name=null in addCustomEntity()
 		"defaultRadius":110, # used if radius<0 in addCustomEntity()
 		"customDescriptionId":"orbital_station_default",
 		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
