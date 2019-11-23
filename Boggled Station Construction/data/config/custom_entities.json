@@ -62,6 +62,49 @@
 		"tags":["station", "boggled_astropolis"],
 		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
 	},
+	"boggled_mining_station":{
+		"defaultName":"Mining Station", # used if name=null in addCustomEntity()
+		"defaultRadius":45, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"boggled_mining_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":20,
+		"iconHeight":20,
+		"sprite":"graphics/stations/station_mining00.png",
+		"spriteWidth":40,
+		"spriteHeight":40,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_mining_station"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_siphon_station":{
+		"defaultName":"Siphon Station", # used if name=null in addCustomEntity()
+		"defaultRadius":35, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"boggled_siphon_station",
+		"interactionImage":"graphics/illustrations/orbital.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":20,
+		"iconHeight":20,
+		"sprite":"graphics/stations/station_side05.png",
+		"spriteWidth":40,
+		"spriteHeight":40,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_siphon_station"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	#Deprecated. Exists to maintain backwards compatibility for those who built this old version of the station using a previous version of this mod
 	"boggled_station_mining":{
 		"defaultName":"Mining Station", # used if name=null in addCustomEntity()
 		"defaultRadius":110, # used if radius<0 in addCustomEntity()
@@ -80,7 +123,7 @@
 		"showNameOnMap":false,
 		"scaleNameWithZoom":false,
 		"scaleIconWithZoom":true,
-		"tags":["station", "boggled_station_mining"],
+		"tags":["station", "boggled_mining_station"],
 		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
 	}
 }
