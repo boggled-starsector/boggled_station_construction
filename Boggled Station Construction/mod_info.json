@@ -1,7 +1,7 @@
 {
 	"id":"Boggled Station Construction",
 	"name":"Station Construction",
-	"version":"2.1.0",
+	"version":"2.2.0",
 	"author": "boggled",
 	"description":"Build astropoli around your larger worlds and build mining stations near asteroid belts.",
 	"gameVersion":"0.9.1a",
