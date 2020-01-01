@@ -1,9 +1,9 @@
 {
 	"id":"Boggled Station Construction",
 	"name":"Station Construction",
-	"version":"2.2.0",
+	"version":"2.3.0",
 	"author": "boggled",
-	"description":"Build astropoli around your larger worlds and build mining stations near asteroid belts.",
+	"description":"Build astropoli, mining stations and siphon stations.",
 	"gameVersion":"0.9.1a",
 	"jars":["jar/BoggledStationConstruction.jar"],
 	"modPlugin":"data.scripts.BoggledStationConstructionPlugin",
