@@ -1,3 +1,7 @@
 {
 	"boggledAstropolisEnabled":true,
+	"boggledStationHazardRatingModifier":0,
+	"boggledStationCrampedQuartersEnabled":false,
+	"boggledStationCrampedQuartersSizeGrowthReductionStarts":4,
+	"boggledApplyStationSettingsToAllStationsInSector":false,
 }

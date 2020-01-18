@@ -1,2 +1,3 @@
 name,id,planetary,decivRemove,script,desc,icon,order
 Station Sprite Controller (hidden),sprite_controller,,FALSE,data.campaign.econ.conditions.Sprite_Controller,Hidden condition to control swapping station sprites as the population size changes. Does not need an icon.,graphics/icons/conditions/blank_img.png,5000
+Cramped Quarters,cramped_quarters,,FALSE,data.campaign.econ.conditions.Cramped_Quarters,"Space stations can only comfortably accommodate a population of modest size. As the population grows, living conditions deteriorate due to lack of space, which deters further population growth.",graphics/icons/conditions/cramped_quarters.png,5000
