@@ -1,7 +1,11 @@
 {
 	"boggledAstropolisEnabled":true,
+	"boggledMaxNumAstropoliPerPlanet":3,
+
+	"boggledMaxNumMiningStationsPerSystem":1,
+
 	"boggledStationHazardRatingModifier":0,
 	"boggledStationCrampedQuartersEnabled":false,
 	"boggledStationCrampedQuartersSizeGrowthReductionStarts":4,
-	"boggledApplyStationSettingsToAllStationsInSector":false,
+	"boggledApplyStationSettingsToAllStationsInSector":false,	
 }
