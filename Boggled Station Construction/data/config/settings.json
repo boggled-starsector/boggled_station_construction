@@ -1,11 +1,50 @@
 {
+	#Enables construction of astropoli in orbit around planets.
+	#The maximum number of astropoli per planet is 3. Setting the value above 3
+	#results in an error message. Valid settings are 1, 2 or 3.
+	#The credit cost of the astropoli can be set in industries.csv. Note that
+	#the cost mult value in industries.csv is multiplied by 5,000 credits to determine
+	#the actual in-game value.
 	"boggledAstropolisEnabled":true,
 	"boggledMaxNumAstropoliPerPlanet":3,
 
+	#Set the maximum number of mining stations per system.
+	#This number can be arbitrarily large but balance and performance problems
+	#will result with extreme values.
 	"boggledMaxNumMiningStationsPerSystem":1,
 
+	#Configures the base hazard rating for stations by offsetting the base hazard of
+	#100 by the value the player inputs. Negative values can be used to decrease hazard.
 	"boggledStationHazardRatingModifier":0,
+
+	#Enables the cramped quarters setting that greatly reduces station population growth
+	#starting at the chosen value.
 	"boggledStationCrampedQuartersEnabled":false,
 	"boggledStationCrampedQuartersSizeGrowthReductionStarts":4,
-	"boggledApplyStationSettingsToAllStationsInSector":false,	
+
+	#Enables the 'Expand Station' industry to increase the population soft limit set above.
+	#The base cost of this industry can be set using industries.csv similar to the astropoli
+	#above.
+	"boggledStationCrampedQuartersPlayerCanPayToIncreaseStationSize":false,
+	"boggledStationProgressiveIncreaseInCostsToExpandStation":true,
+	
+	#Experimental feature that applies the hazard rating
+	#setting and cramped quarters condition to all stations in the Sector, whether or not they 
+	#were created with this mod. If you use this setting, please report back to Boggled if you
+	#encounter any bugs. Appears to work with vanilla and Nex, but untested with any other mods.
+	"boggledApplyStationSettingsToAllStationsInSector":false,
+
+	#Controls the costs for building mining and siphon stations
+	"boggledStationBuildCreditCost":500000,
+	"boggledStationBuildCrewCost":1000,
+	"boggledStationBuildHeavyMachineryCost":250,
+	"boggledStationBuildMetalCost":1000,
+	"boggledStationBuildTransplutonicsCost":250,
+
+	#Controls the costs for colonizing an abandoned station
+	"boggledStationRecolonizeCreditCost":250000,
+	"boggledStationRecolonizeCrewCost":1000,
+	"boggledStationRecolonizeHeavyMachineryCost":125,
+	"boggledStationRecolonizeMetalCost":500,
+	"boggledStationRecolonizeTransplutonicsCost":125,	
 }
