@@ -27,6 +27,9 @@
 	#above.
 	"boggledStationCrampedQuartersPlayerCanPayToIncreaseStationSize":false,
 	"boggledStationProgressiveIncreaseInCostsToExpandStation":true,
+
+	#Boosts station accessibility due to zero gravity. Leaving this at 0 means no boost.
+	"boggledStationAccessibilityBoost":0,
 	
 	#Experimental feature that applies the hazard rating
 	#setting and cramped quarters condition to all stations in the Sector, whether or not they 
