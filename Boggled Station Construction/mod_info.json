@@ -1,7 +1,7 @@
 {
 	"id":"Boggled Station Construction",
 	"name":"Station Construction",
-	"version":"3.1.1",
+	"version":"3.2.0",
 	"author": "boggled",
 	"description":"Build astropoli, mining stations and siphon stations.",
 	"gameVersion":"0.9.1a",
