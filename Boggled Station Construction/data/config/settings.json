@@ -1,4 +1,14 @@
 {
+	"ruleCommandPackages":[
+		"data.campaign.quests.boggledGateQuest"
+	],
+
+	#Setting this to false will completely disable any station construction content
+	"boggledStationConstructionContentEnabled":true,
+
+	#Setting this to false will completely disable any gate-related content
+	"boggledAstralGateContentEnabled":true,
+
 	#Enables construction of astropoli in orbit around planets.
 	#The maximum number of astropoli per planet is 3. Setting the value above 3
 	#results in an error message. Valid settings are 1, 2 or 3.
@@ -49,5 +59,51 @@
 	"boggledStationRecolonizeCrewCost":1000,
 	"boggledStationRecolonizeHeavyMachineryCost":125,
 	"boggledStationRecolonizeMetalCost":500,
-	"boggledStationRecolonizeTransplutonicsCost":125,	
+	"boggledStationRecolonizeTransplutonicsCost":125,
+
+	#Controls the costs for building an Astral gate
+	"boggledGateBuildCreditCost":1000000,
+	"boggledGateBuildCrewCost":1000, #Only consumed if the gatekeeper station is enabled below
+	"boggledGateBuildHeavyMachineryCost":500,
+	"boggledGateBuildMetalCost":1000,
+	"boggledGateBuildTransplutonicsCost":500,
+	"boggledGateBuildDomainEraArtifactsCost":100, #Only consumed if Domain Archaeology industry is enabled above
+
+	#Controls the jump costs for using an Astral gate
+	#Note that these costs only apply if gatekeeper stations are disabled or the gatekeeper station is abandoned
+	#Jumping from your gates or allied-faction controlled gates is always free
+	"boggledGateJumpCreditCost":20000,
+	"boggledGateJumpFuelCost":1000,
+
+	#Controls whether the Astral gate quest can be obtained. Disabling this quest will
+	#immediately unlock the ability to construct Astral gates. Note that the quest cannot
+	#be obtained if the player is using randomized core worlds.
+	"boggledAstralGateQuestEnabled":true,
+
+	#Controls the gatekeeper station component of the Astral gates. If the player wants an experience that
+	#resembles Gates Awakened as closely as possible, change this to false.
+	"boggledGateStationEnabled":true,
+
+	#It is possible for modders to tag systems as being ineligible for Astral gate construction. Changing
+	#this to false will override those mods and allow the player to build Astral gates even
+	#if other mods have marked a system as ineligible.
+	"boggledAstralGateRespectBlacklist":true,
+
+	#Causes the list of Astral gates to be updated every in-game day rather than every frame. If the player has a fast
+	#computer, the player can set this to false for a very slightly more responsive experience. The gate list will be updated
+	#immediately (instead of at end-of-day) if the player builds a new gate.
+	"boggledAstralGateConstructionLowPerformanceModeEnabled":true,
+
+	#Can be used to disable the Domain Archaeology industry if the player wishes
+	"boggledDomainArchaeologyEnabled":true,
+
+	"graphics":
+	{
+		"boggled":
+		{
+			"penelope_secret_intel":"graphics/icons/intel/penelope_secret.png",
+			"portrait_gate_quest_ai":"graphics/portraits/portrait_ai.png",
+			"portrait_gate_quest_eliasLuyten":"graphics/portraits/portrait_elias_luyten.png",
+		},
+	}	
 }

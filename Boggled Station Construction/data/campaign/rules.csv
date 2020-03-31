@@ -1,0 +1,69 @@
+id,trigger,conditions,script,text,options,notes
+# gate interactions,,,,,,
+astralGateOpenDialog,OpenInteractionDialog,$tag:boggled_astral_gate,"ShowDefaultVisual
+PrintDescription 1
+AddText ""To traverse the gate or select the destination gate, add the respective abilities to your ability bar.""
+SetShortcut astralGateLeave ""ESCAPE""",,astralGateLeave:Leave,
+astralGateLeave,DialogOptionSelected,$option == astralGateLeave,DismissDialog,,,
+#
+#Elias Luyten interactions
+#
+boggledGateQuest_IntroGreeting,PickGreeting,"$tag:boggled_gate_quest_eliasLuyten score:10","showLuytenCustomVisual
+FireBest PopulateOptionsBoggledGateQuest","After a short wait, your connection request is accepted.",,
+
+
+boggledGateQuest_introPopulate1,PopulateOptionsBoggledGateQuest,"!checkPlayerWentDownProvideAstralRoute
+!checkPlayerWentDownPayBribeRoute",,"""Chancellor Luyten here. What can I do for you?"" He's staring intently at something off screen.","0:askLuytenForResearchData:""I'm looking for some research data.""
+1:cutCommLinkNoText:Cut the comm link",
+boggledGateQuest_introPopulate2,PopulateOptionsBoggledGateQuest,"checkPlayerWentDownProvideAstralRoute
+!checkPlayerHasAstralInFleetBoggled",,"""Well, have you brought me an Astral-class carrier?""","0:playerDidNotBringLuytenAnAstral:""Not yet.""",
+boggledGateQuest_introPopulate3,PopulateOptionsBoggledGateQuest,"checkPlayerHasEnoughCreditsForBribe
+checkPlayerWentDownPayBribeRoute",,"""Well, do you have my credits?""","0:payLuytenTheBribe:""I'll send the credits right away.""
+1:letMeThinkAboutPayingBribe:""Not yet.""
+2:changeMindAndAdmitToAICore:""Has an AI core ever reviewed the data?""",
+boggledGateQuest_introPopulate5,PopulateOptionsBoggledGateQuest,"!checkPlayerHasEnoughCreditsForBribe
+checkPlayerWentDownPayBribeRoute",,"""Well, do you have my credits?""","0:letMeThinkAboutPayingBribe:""Not yet.""
+1:changeMindAndAdmitToAICore:""Has an AI core ever reviewed the data?""",
+boggledGateQuest_playerDidNotBringLuytenAnAstral,DialogOptionSelected,$option == playerDidNotBringLuytenAnAstral,,"""Then why are you here? If you want the gate research data, go get one."" He cuts the comm link.","0:cutCommLinkNoText:Continue",
+boggledGateQuest_luytenFirstAnswer,DialogOptionSelected,$option == askLuytenForResearchData,,"""What data?""","0:askLuytenForDomainGateData:Ask Luyten for the Hegemony gate research data",
+boggledGateQuest_luytenSecondAnswer,DialogOptionSelected,$option == askLuytenForDomainGateData,,"Luyten immediately turns his head and looks intently at you. ""That research is classified. It would be illegal for me to share it with you,"" he says calmly. He points his finger at you. ""You shouldn't even know that it exists.""","0:offerToBribeLuyten:Offer a bribe in exchange for the data",
+boggledGateQuest_luytenThirdAnswer,DialogOptionSelected,$option == offerToBribeLuyten,,"""Here we go again."" Luyten shakes his head. ""Let me guess. Some rogue AI core told you to bribe me to get the data?""","0:admitToRogueAICore:""How did you know?""
+1:denyRogueAICore:(Lie) ""That's preposterous.""",
+boggledGateQuest_luytenAdmittedToAICore,DialogOptionSelected,$option == admitToRogueAICore,,"""I've already had two other people working on behalf of rogue AI cores approach me about that data. They both tried to bribe me.""","0:askLuytenIfBribesWorked:""Did the bribes work?""
+1:askLuytenWhyCoresWantData:""Why do you think AI cores want that data?""",
+boggledGateQuest_askLuytenWhyCoresWantData,DialogOptionSelected,$option == askLuytenWhyCoresWantData,,"""They think our monkey brains are too simplistic to understand how the gates work. They think the gates were invented by an artificial intelligence to begin with, and that only they can fix them."" Luyten points his finger at you again. ""Let me tell you something. One of the other cores spoke with me after looking at the data. It basically admitted it has no idea why the gate network stopped working. I guess they're not so clever after all.""","0:askLuytenIfBribesWorked:""Did the bribes work?""
+1:notAfraidOfWorkingWithAICores:""You're not afraid of working with AI cores?""",
+boggledGateQuest_notAfraidOfWorkingWithAICores,DialogOptionSelected,$option == notAfraidOfWorkingWithAICores,,"Luyten shrugs. ""Not all of them are insane and genocidal. The one I spoke with allegedly resides in the ruins of an abandoned colony just outside the core. It does nothing but study xenolife."" He scoffs. ""Get this. It wanted to reactivate the gates just so it could find more xenolife to research.""","0:askLuytenIfBribesWorked:""I take it the bribes worked then?""",
+boggledGateQuest_askLuytenIfBribesWorked,DialogOptionSelected,$option == askLuytenIfBribesWorked,"addTagPlayerWentDownProvideAstralRoute","""Nope."" Luyten smiles. ""How about we arrange a trade instead?""","0:whatKindOfTradeLuyten:""What kind of trade?""",
+boggledGateQuest_whatKindOfTradeLuyten,DialogOptionSelected,$option == whatKindOfTradeLuyten,,"I'm working on blueprints to build a larger version of the recall device installed aboard Astral-class carriers. You know, the thing that teleports all the fighters back to the ship?""","0:luytenAskAboutAstralRecallDevice:""And?""",
+boggledGateQuest_luytenAskAboutAstralRecallDevice1,DialogOptionSelected,"$option == luytenAskAboutAstralRecallDevice
+!checkPlayerHasAstralInFleetBoggled",,"""Well, I'm going to need an Astral to perform tests on. And given the resources I have available, using human engineers to draft the blueprints for a massive station won't be feasible, so I'll need your AI core friend to help me out with that."" He pauses for a moment. ""You wouldn't happen to have an Astral-class carrier lying around, would you?""","0:luytenPlayerDoesNotHaveAstralInFleet:""No, I don't.""",
+boggledGateQuest_luytenAskAboutAstralRecallDevice2,DialogOptionSelected,"$option == luytenAskAboutAstralRecallDevice
+checkPlayerHasAstralInFleetBoggled",,"""Well, I'm going to need an Astral to perform tests on. And given the resources I have available, using human engineers to draft the blueprints for a massive station won't be feasible, so I'll need your AI core friend to help me out with that."" He pauses for a moment. ""You wouldn't happen to have an Astral-class carrier lying around, would you?""","0:tellLuytenAstralIsInFleet:""I do happen to have one lying around.""
+1:luytenPlayerDoesNotHaveAstralInFleet:""No, I don't.""",
+boggledGateQuest_luytenPlayerDoesNotHaveAstralInFleet,DialogOptionSelected,$option == luytenPlayerDoesNotHaveAstralInFleet,,"""Alright, then go use the credits you were going to bribe me with to buy one. I'll be waiting here for you."" Luyten cuts the comm link.
+
+""This guy is more nuts than the AI core,"" your comms officer says.","0:cutCommLinkNoText:Continue",
+boggledGateQuest_introPopulate4,PopulateOptionsBoggledGateQuest,"checkPlayerWentDownProvideAstralRoute
+checkPlayerHasAstralInFleetBoggled",,"""Well, have you brought me an Astral-class carrier?""","0:playerBroughtLuytenAnAstral:""Yes, I have one.""
+1:playerDidNotBringLuytenAnAstral:""Not yet.""",
+boggledGateQuest_playerBroughtLuytenAnAstral,DialogOptionSelected,$option == playerBroughtLuytenAnAstral,,"Luyten looks surprised. ""I was joking when I told you get one. I thought you would interpret it as me telling you to fuck off."" He smiles nervously. ""But do you really have one in your fleet?""","0:tellLuytenAstralIsInFleet:""Yes, I do.""",
+boggledGateQuest_tellLuytenAstralIsInFleet,DialogOptionSelected,$option == tellLuytenAstralIsInFleet,,"""This is wonderful! I guess that AI core knows how to find capable lackeys. I'll come aboard immediately to run some tests on the recall device.""","0:letLuytenRunTestsOnAstral:Allow Luyten to run tests aboard your Astral-class carrier",
+boggledGateQuest_letLuytenRunTestsOnAstral,DialogOptionSelected,$option == letLuytenRunTestsOnAstral,"boggledGateQuestAdvanceToStage3","Luyten immediately gets to work attaching cables and monitors to the recall device on your Astral. He proceeds to recall sequentially larger pieces of space debris, stopping only when the device is no longer able to teleport the entire mass of the target object with a single pulse.
+
+""That does it. I have all the data I need. Go tell your pal on Aeolus that if it completes these station blueprints for me, I'll send the Hegemony gate research data in exchange."" Luyten takes his shuttle back to Ancyra.","0:cutCommLinkNoText:Continue",
+boggledGateQuest_denyRogueAICore,DialogOptionSelected,$option == denyRogueAICore,,"Luyten smiles knowingly. ""Hypothetically, if you were working for an AI core, you wouldn't just admit that to a stranger, would you?""","0:denyWorkingForRogueAICore:""I serve Ludd, not the silicon Satan.""
+1:admitWorkingForRogueAICore:""I'm hypothetically working for a hypothetical AI core.""",
+boggledGateQuest_admitWorkingForRogueAICore,DialogOptionSelected,$option == admitWorkingForRogueAICore,,"""I see. Well, in that case, we may be able to reach an agreement after all.""","0:askLuytenIfBribesWorked:""So you will accept a bribe?"""
+boggledGateQuest_denyWorkingForRogueAICore1,DialogOptionSelected,"$option == denyWorkingForRogueAICore
+checkPlayerHasEnoughCreditsForBribe","addTagPlayerWentDownPayBribeRoute","Luyten waves his hand dismissively. ""Very well then. I want 100,000 credits for the data."" He points his finger at you again. ""But know this: minds far superior to ours have reviewed that data and came up with nothing. The gates can't be fixed.""","0:payLuytenTheBribe:""I'll send the credits right away.""
+1:letMeThinkAboutPayingBribe:""Let me think about it.""
+2:changeMindAndAdmitToAICore:""Has an AI core ever reviewed the data?""",
+boggledGateQuest_denyWorkingForRogueAICore2,DialogOptionSelected,"$option == denyWorkingForRogueAICore
+!checkPlayerHasEnoughCreditsForBribe","addTagPlayerWentDownPayBribeRoute","Luyten waves his hand dismissively. ""Very well then. I want 100,000 credits for the data."" He points his finger at you again. ""But know this: minds far superior to ours have reviewed that data and came up with nothing. The gates can't be fixed.""","0:letMeThinkAboutPayingBribe:""Let me think about it.""
+1:changeMindAndAdmitToAICore:""Has an AI core ever reviewed the data?""",
+boggledGateQuest_letMeThinkAboutPayingBribe,DialogOptionSelected,$option == letMeThinkAboutPayingBribe,,"""Did you travel all the way here just to waste my time? Come back when you've got the credits."" He cuts the comm link.","0:cutCommLinkNoText:Continue",
+boggledGateQuest_payLuytenTheBribe,DialogOptionSelected,$option == payLuytenTheBribe,"subtractBribeAmountFromPlayerBoggled
+boggledGateQuestAdvanceToStage7","Luyten sends you a payment address. Afer you transfer the funds, he uploads an encrypted file to your TriPad. ""The password is 'ReindeerFlotilla'. Good luck."" He cuts the comm link.","0:cutCommLinkNoText:Continue",
+boggledGateQuest_changeMindAndAdmitToAICore,DialogOptionSelected,$option == changeMindAndAdmitToAICore,"removeTagPlayerWentDownPayBribeRoute","Luyten sits up in his chair. ""I knew it! You're working for an AI core after all."" His eyes dart back to something off screen. ""I know of multiple alpha AI cores having reviewed the data. One even admitted to me that it has no idea why the gates stopped working.""","0:askLuytenIfBribesWorked:""I take it the bribes worked then?""
+1:notAfraidOfWorkingWithAICores:""You're not afraid of working with AI cores?""",
