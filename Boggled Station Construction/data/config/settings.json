@@ -1,6 +1,7 @@
 {
 	"ruleCommandPackages":[
-		"data.campaign.quests.boggledGateQuest"
+		"data.campaign.quests.boggledGateQuest",
+		"data.scripts"
 	],
 
 	#Setting this to false will completely disable any station construction content
@@ -96,6 +97,12 @@
 
 	#Can be used to disable the Domain Archaeology industry if the player wishes
 	"boggledDomainArchaeologyEnabled":true,
+
+	#Can be used to disable the Kletka Simulator (AI core production) industry if the player wishes
+	"boggledKletkaSimulatorEnabled":true,
+
+	#Can be used to disable the Skyhook Anchor structure if the player wishes
+	"boggledSkyhookAnchorEnabled":true,
 
 	"graphics":
 	{

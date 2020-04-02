@@ -67,3 +67,12 @@ boggledGateQuest_payLuytenTheBribe,DialogOptionSelected,$option == payLuytenTheB
 boggledGateQuestAdvanceToStage7","Luyten sends you a payment address. Afer you transfer the funds, he uploads an encrypted file to your TriPad. ""The password is 'ReindeerFlotilla'. Good luck."" He cuts the comm link.","0:cutCommLinkNoText:Continue",
 boggledGateQuest_changeMindAndAdmitToAICore,DialogOptionSelected,$option == changeMindAndAdmitToAICore,"removeTagPlayerWentDownPayBribeRoute","Luyten sits up in his chair. ""I knew it! You're working for an AI core after all."" His eyes dart back to something off screen. ""I know of multiple alpha AI cores having reviewed the data. One even admitted to me that it has no idea why the gates stopped working.""","0:askLuytenIfBribesWorked:""I take it the bribes worked then?""
 1:notAfraidOfWorkingWithAICores:""You're not afraid of working with AI cores?""",
+#
+#Building Domain-era stable location structures
+#
+#stable_buildRelayDomainOpt,Stable_AddBuildOptions,,,,40:SL_buildDomainRelay:Construct a Domain-tech comm relay,
+#stable_buildArrayDomainOpt,Stable_AddBuildOptions,,,,50:SL_buildDomainArray:Construct a Domain-tech sensor array,
+#stable_buildBuoyDomainOpt,Stable_AddBuildOptions,,,,60:SL_buildDomainBuoy:Construct a Domain-tech nav buoy,
+#stable_buildDomainRelay,DialogOptionSelected,$option == SL_buildDomainRelay,"$slBuildType = comm_relay 0
+#boggledObjectivesCommands $slBuildType
+#FireBest Stable_DomainBuildConfirmOptions",,,
