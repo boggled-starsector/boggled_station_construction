@@ -68,7 +68,7 @@
 	"boggledGateBuildHeavyMachineryCost":500,
 	"boggledGateBuildMetalCost":1000,
 	"boggledGateBuildTransplutonicsCost":500,
-	"boggledGateBuildDomainEraArtifactsCost":100, #Only consumed if Domain Archaeology industry is enabled above
+	"boggledGateBuildDomainEraArtifactsCost":100, #Only consumed if Domain Archaeology industry is enabled below
 
 	#Controls the jump costs for using an Astral gate
 	#Note that these costs only apply if gatekeeper stations are disabled or the gatekeeper station is abandoned
@@ -103,6 +103,9 @@
 
 	#Can be used to disable the Skyhook Anchor structure if the player wishes
 	"boggledSkyhookAnchorEnabled":true,
+
+	#Can be used to disable building of the Domain-tech stable location structures if the player wishes
+	"boggledDomainTechObjectivesEnabled":true,
 
 	"graphics":
 	{
