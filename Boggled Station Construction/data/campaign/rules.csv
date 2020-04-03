@@ -70,9 +70,21 @@ boggledGateQuest_changeMindAndAdmitToAICore,DialogOptionSelected,$option == chan
 #
 #Building Domain-era stable location structures
 #
-#stable_buildRelayDomainOpt,Stable_AddBuildOptions,,,,40:SL_buildDomainRelay:Construct a Domain-tech comm relay,
-#stable_buildArrayDomainOpt,Stable_AddBuildOptions,,,,50:SL_buildDomainArray:Construct a Domain-tech sensor array,
-#stable_buildBuoyDomainOpt,Stable_AddBuildOptions,,,,60:SL_buildDomainBuoy:Construct a Domain-tech nav buoy,
-#stable_buildDomainRelay,DialogOptionSelected,$option == SL_buildDomainRelay,"$slBuildType = comm_relay 0
-#boggledObjectivesCommands $slBuildType
-#FireBest Stable_DomainBuildConfirmOptions",,,
+stable_buildRelayDomainOpt,Stable_AddBuildOptions,,,,40:SL_buildDomainRelay:Construct a Domain-tech comm relay,
+stable_buildArrayDomainOpt,Stable_AddBuildOptions,,,,50:SL_buildDomainArray:Construct a Domain-tech sensor array,
+stable_buildBuoyDomainOpt,Stable_AddBuildOptions,,,,60:SL_buildDomainBuoy:Construct a Domain-tech nav buoy,
+stable_buildDomainRelay,DialogOptionSelected,$option == SL_buildDomainRelay,"$slBuildType = comm_relay 0
+boggledObjectivePrintDescription $slBuildType
+FireBest Stable_DomainBuildConfirmOptions",,,
+stable_buildDomainSensor,DialogOptionSelected,$option == SL_buildDomainArray,"$slBuildType = sensor_array 0
+boggledObjectivePrintDescription $slBuildType
+FireBest Stable_DomainBuildConfirmOptions",,,
+stable_buildDomainBuoy,DialogOptionSelected,$option == SL_buildDomainBuoy,"$slBuildType = nav_buoy 0
+boggledObjectivePrintDescription $slBuildType
+FireBest Stable_DomainBuildConfirmOptions",,,
+stable_confirmOptsDomain,Stable_DomainBuildConfirmOptions,boggledObjectiveCanBuild $slBuildType,,,"boggledDomainbuildProceed:Proceed
+SL_cancelBuild:Never mind",
+stable_confirmOptsCantDomain,Stable_DomainBuildConfirmOptions,!boggledObjectiveCanBuild $slBuildType,SetEnabled boggledDomainbuildProceed false,,"boggledDomainbuildProceed:Proceed
+SL_cancelBuild:Never mind",
+stable_buildProceedDomain,DialogOptionSelected,$option == boggledDomainbuildProceed,"boggledObjectiveBuild $slBuildType
+DismissDialog",,,
